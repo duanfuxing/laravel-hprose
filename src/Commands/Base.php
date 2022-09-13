@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhuqipeng\LaravelHprose\Commands;
+namespace duan617\LaravelHprose\Commands;
 
 use Illuminate\Console\Command;
 

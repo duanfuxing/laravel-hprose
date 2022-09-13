@@ -1,8 +1,8 @@
 <?php
 
-namespace Zhuqipeng\LaravelHprose\Parameters;
+namespace duan617\LaravelHprose\Parameters;
 
-use Zhuqipeng\LaravelHprose\Parameters\Base;
+use duan617\LaravelHprose\Parameters\Base;
 
 class Manage
 {

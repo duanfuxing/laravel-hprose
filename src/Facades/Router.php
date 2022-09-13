@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhuqipeng\LaravelHprose\Facades;
+namespace duan617\LaravelHprose\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

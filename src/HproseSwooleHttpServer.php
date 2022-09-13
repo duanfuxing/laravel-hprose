@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhuqipeng\LaravelHprose;
+namespace duan617\LaravelHprose;
 
 use stdClass;
 use Exception;

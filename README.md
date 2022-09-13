@@ -24,14 +24,14 @@ composer require "zhuqipeng/laravel-hprose:v1.0.*"
     'providers' => [
         // ...
 
-        Zhuqipeng\LaravelHprose\ServiceProvider::class,
+        duan617\LaravelHprose\ServiceProvider::class,
     ]
     ```
     ```php
     'aliases' => [
         // ...
 
-        'LaravelHproseMethodManage' => Zhuqipeng\LaravelHprose\Facades\HproseMethodManage::class,
+        'LaravelHproseMethodManage' => duan617\LaravelHprose\Facades\HproseMethodManage::class,
     ]
     ```
 2. 配置.env文件
@@ -49,7 +49,7 @@ composer require "zhuqipeng/laravel-hprose:v1.0.*"
 
 3. 创建`配置`和`路由`文件：
     ```shell
-    php artisan vendor:publish --provider="Zhuqipeng\LaravelHprose\ServiceProvider"
+    php artisan vendor:publish --provider="duan617\LaravelHprose\ServiceProvider"
     ```
     >应用根目录下的`config`目录下会自动生成新文件`hprose.php`
     >
@@ -127,13 +127,13 @@ class User
 ```
 参数验证器
 
-和 `laravel` 的表单验证规则一致，但必须继承 `Zhuqipeng\LaravelHprose\Parameters\Base`
+和 `laravel` 的表单验证规则一致，但必须继承 `duan617\LaravelHprose\Parameters\Base`
 ```php
 <?php
 
 namespace App\Controllers\Parameters;
 
-use Zhuqipeng\LaravelHprose\Parameters\Base;
+use duan617\LaravelHprose\Parameters\Base;
 
 class UserStore extends Base
 {
@@ -154,7 +154,7 @@ class UserStore extends Base
 ```
 自定义参数验证错误响应格式
 
-默认会抛出异常 `\Zhuqipeng\LaravelHprose\Exceptions\BadRequestParameterException`
+默认会抛出异常 `\duan617\LaravelHprose\Exceptions\BadRequestParameterException`
 
 如果需要自定义异常，或者响应json格式，在验证器里重写 `formatErrors` 方法即可
 ```php
@@ -162,7 +162,7 @@ class UserStore extends Base
 
 namespace App\Controllers\Parameters;
 
-use Zhuqipeng\LaravelHprose\Parameters\Base;
+use duan617\LaravelHprose\Parameters\Base;
 
 class UserStore extends Base
 {

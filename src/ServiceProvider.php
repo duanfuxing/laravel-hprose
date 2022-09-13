@@ -1,9 +1,10 @@
 <?php
 
-namespace Zhuqipeng\LaravelHprose;
+namespace duan617\LaravelHprose;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use LaravelHproseRouter;
+use Illuminate\Support\Str;
 
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -43,7 +44,7 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function loadRoute()
     {
-        if (str_is('5.2.*', $this->app::VERSION)) {
+        if (Str::is('5.2.*', $this->app::VERSION)) {
             $routeFilePath = base_path('app/Http/rpc.php');
         } else {
             $routeFilePath = base_path('routes/rpc.php');
@@ -132,7 +133,7 @@ class ServiceProvider extends LaravelServiceProvider
     {
         $source = realpath(__DIR__ . '/route.php');
 
-        if (str_is('5.2.*', $this->app::VERSION)) {
+        if (Str::is('5.2.*', $this->app::VERSION)) {
             $targetPath = base_path('app/Http/rpc.php');
         } else {
             $targetPath = base_path('routes/rpc.php');
@@ -149,7 +150,7 @@ class ServiceProvider extends LaravelServiceProvider
     private function registerHproseSocketServer()
     {
         $this->app->singleton('hprose.socket_server', function ($app) {
-            $server = new \Zhuqipeng\LaravelHprose\HproseSocketServer();
+            $server = new \duan617\LaravelHprose\HproseSocketServer();
 
             $server->onSendError = function ($error, \stdClass $context) {
                 \Log::info($error);
@@ -180,7 +181,7 @@ class ServiceProvider extends LaravelServiceProvider
         $this->app->singleton('hprose.swoole_http_server', function ($app) {
             $uri = config('hprose.http_uri');
 
-            $server = new \Zhuqipeng\LaravelHprose\HproseSwooleHttpServer($uri);
+            $server = new \duan617\LaravelHprose\HproseSwooleHttpServer($uri);
 
             $server->onSendError = function ($error, \stdClass $context) {
                 \Log::info($error);
@@ -198,7 +199,7 @@ class ServiceProvider extends LaravelServiceProvider
     private function registerHproseMethodManage()
     {
         $this->app->singleton('hprose.router', function ($app) {
-            return new \Zhuqipeng\LaravelHprose\Routing\Router;
+            return new \duan617\LaravelHprose\Routing\Router;
         });
     }
 
@@ -210,7 +211,7 @@ class ServiceProvider extends LaravelServiceProvider
     private function registerHproseParameter()
     {
         $this->app->singleton('hprose.parameter', function ($app) {
-            return new \Zhuqipeng\LaravelHprose\Parameters\Manage;
+            return new \duan617\LaravelHprose\Parameters\Manage;
         });
     }
 }

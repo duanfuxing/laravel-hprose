@@ -1,12 +1,12 @@
 {
-    "name": "zhuqipeng/laravel-hprose",
+    "name": "duan617/laravel-hprose",
     "description": "Hprose for Laravel",
     "keywords": ["hprose", "laravel"],
     "license": "MIT",
     "authors": [
         {
-            "name": "朱其鹏",
-            "email": "28942998@qq.com"
+            "name": "duan617",
+            "email": "13249392000@163.com"
         }
     ],
     "require": {
@@ -16,16 +16,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Zhuqipeng\\LaravelHprose\\": "src/"
+            "duan617\\LaravelHprose\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Zhuqipeng\\LaravelHprose\\ServiceProvider"
+                "duan617\\LaravelHprose\\ServiceProvider"
             ],
             "aliases": {
-                "LaravelHproseRouter": "Zhuqipeng\\LaravelHprose\\Facades\\Router"
+                "LaravelHproseRouter": "duan617\\LaravelHprose\\Facades\\Router"
             }
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhuqipeng\LaravelHprose\Routing;
+namespace duan617\LaravelHprose\Routing;
 
 class Router
 {

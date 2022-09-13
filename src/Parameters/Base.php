@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhuqipeng\LaravelHprose\Parameters;
+namespace duan617\LaravelHprose\Parameters;
 
 class Base
 {
@@ -29,13 +29,13 @@ class Base
      *
      * @param \Illuminate\Support\MessageBag $errorMessage
      *
-     * @throws Zhuqipeng\LaravelHprose\Exceptions\BadRequestParameterException
+     * @throws duan617\LaravelHprose\Exceptions\BadRequestParameterException
      *
      * @return void
      */
     public function formatErrors(\Illuminate\Support\MessageBag $errorMessage)
     {
-        throw new \Zhuqipeng\LaravelHprose\Exceptions\BadRequestParameterException(
+        throw new \duan617\LaravelHprose\Exceptions\BadRequestParameterException(
             $errorMessage->first(),
             400
         );

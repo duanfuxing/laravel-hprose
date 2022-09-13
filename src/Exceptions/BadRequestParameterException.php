@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhuqipeng\LaravelHprose\Exceptions;
+namespace duan617\LaravelHprose\Exceptions;
 
 /**
  * 请求参数有误
